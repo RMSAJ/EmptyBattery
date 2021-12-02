@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mohd/EmptyBattery/app/src/main/res/drawable/ic_baseline_battery_alert_24.xml" value="0.15364583333333334" />
+        <entry key="..\:/Users/Mohd/EmptyBattery/app/src/main/res/drawable/ic_baseline_battery_charging_full_24.xml" value="0.15364583333333334" />
+        <entry key="..\:/Users/Mohd/EmptyBattery/app/src/main/res/drawable/ic_baseline_battery_full_24.xml" value="0.15364583333333334" />
         <entry key="..\:/Users/Mohd/EmptyBattery/app/src/main/res/layout/activity_main.xml" value="0.14855072463768115" />
       </map>
     </option>
