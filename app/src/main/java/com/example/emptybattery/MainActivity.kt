@@ -21,17 +21,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
+        val filter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
+
+
         myBatteryState = MyBatteryState()
-
-        registerReceiver(myBatteryState, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
-
+        registerReceiver(myBatteryState,filter)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(myBatteryState)
     }
-
 }
 
 
