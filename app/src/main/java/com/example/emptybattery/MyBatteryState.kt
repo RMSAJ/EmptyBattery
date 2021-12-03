@@ -4,32 +4,30 @@ import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.BatteryManager
-import android.util.Log
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.core.graphics.drawable.toDrawable
-import com.example.emptybattery.databinding.ActivityMainBinding
-
-class MyBatteryState(val batteryView: ImageView): BroadcastReceiver() {
-
+class MyBatteryState(): BroadcastReceiver() {
 
     /**
      * the excuted code when the battery is changed
      */
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onReceive(context: Context?, intent: Intent?) {
-        val batteryLevel = intent?.getIntExtra("level", 50)?:return
+        val batteryLevel = intent?.getIntExtra("level", 50)?:0
+        val ischerged = intent?.getIntExtra(BatteryManager.EXTRA_STATUS, -1 )?:0
 
-        val theBttery = if (batteryLevel?:0 < 50 ) {R.id.image_view_battary_level}
-        else {R.id.image_view_battary_level}
-
-        batteryView.context.getDrawable(theBttery)
+        if (batteryLevel < 50 ) {
+            binding!!.ImageState.setImageResource(R.drawable.ic_baseline_battery_alert_24)
+        }
+        else {
+            binding!!.ImageState.setImageResource(R.drawable.ic_baseline_battery_full_24)
+        }
+        if (ischerged == BatteryManager.BATTERY_STATUS_CHARGING){
+            binding!!.ImageState.setImageResource(R.drawable.ic_baseline_battery_charging_full_24)
+        }
     }
-
 }
+
+
 
 
 
