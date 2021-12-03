@@ -4,19 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ndroid=""
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/image_view_battary_level"
+<ImageView  android:id="@+id/image_view_battary_full"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:textSize="34sp"
         android:backgroundTint="@color/black"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/ic_baseline_battery_full_24"
-        />
+        app:srcCompat="@drawable/ic_baseline_battery_full_24"
+    />
 
+    <ImageView
+        ndroid:id="@+id/image_view_battary_level"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:backgroundTint="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
